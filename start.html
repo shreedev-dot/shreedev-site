@@ -27,7 +27,8 @@
       <span class="mark" aria-hidden="true">SD</span>
       <span class="brand-name">Shree Dev<small>Digital storefronts</small></span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="nav" id="main-nav" aria-label="Main">
       <a href="services.html">What we build</a>
       <a href="demos.html">Demos</a>
       <a href="services.html#pricing">Pricing</a>
@@ -40,7 +41,7 @@
 <main id="main">
 
   <section class="section" style="padding-bottom:40px">
-    <div class="wrap" style="max-width:760px">
+    <div class="wrap wrap--narrow">
       <p class="eyebrow">Start a project</p>
       <h1 style="max-width:24ch">Tell us about your shop</h1>
       <p class="lede">
@@ -51,7 +52,7 @@
   </section>
 
   <section class="section section--tight" style="padding-top:0">
-    <div class="wrap" style="max-width:760px">
+    <div class="wrap wrap--narrow">
 
       <div id="dev-bar" class="devbar" hidden>
         <strong>Development state:</strong> the form endpoint is not configured yet, so
@@ -170,6 +171,11 @@
         <div class="field" data-field="notes">
           <label for="notes">Anything else we should know</label>
           <textarea id="notes" name="notes" placeholder="Seasonal rush, fragile items, multiple outlets, a specific look you like…"></textarea>
+        </div>
+
+        <div class="field hp" aria-hidden="true">
+          <label for="company_website">Company website</label>
+          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">

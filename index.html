@@ -17,6 +17,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Shree Dev",
+  "description": "Shree Dev builds complete online stores for local businesses in Rajasthan: catalogue, order management, shipping, GST-ready invoices and live tracking.",
+  "url": "https://shreedev-site.pages.dev/",
+  "email": "shreedev.jaipur@yahoo.com",
+  "areaServed": { "@type": "State", "name": "Rajasthan" },
+  "address": { "@type": "PostalAddress", "addressRegion": "Rajasthan", "addressCountry": "IN" },
+  "priceRange": "INR"
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -27,7 +40,8 @@
       <span class="mark" aria-hidden="true">SD</span>
       <span class="brand-name">Shree Dev<small>Digital storefronts</small></span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="nav" id="main-nav" aria-label="Main">
       <a href="services.html">What we build</a>
       <a href="demos.html">Demos</a>
       <a href="services.html#pricing">Pricing</a>
@@ -59,30 +73,10 @@
         </p>
       </div>
 
-      <div class="preview" role="img" aria-label="Preview of the order dashboard we build for clients: three orders with packing, shipped and delivered status, and a tracking progress bar.">
-        <div class="preview-bar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="preview-url">yourstore.in/admin/orders</span>
-        </div>
-        <div class="preview-body">
-          <div class="pv-row">
-            <strong>#1042 &middot; 2 items</strong>
-            <span class="chip chip--pack">Packing</span>
-          </div>
-          <div class="pv-row">
-            <strong>#1041 &middot; 1 item</strong>
-            <span class="chip chip--ship">Shipped</span>
-          </div>
-          <div class="pv-row">
-            <strong>#1040 &middot; 4 items</strong>
-            <span class="chip chip--done">Delivered</span>
-          </div>
-          <div class="pv-track" aria-hidden="true">
-            <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
-          </div>
-          <p class="pv-caption">Customer sees this timeline live — no phone calls to ask “where is my order”.</p>
-        </div>
-      </div>
+      <figure class="hero-photo">
+        <img src="assets/hero-shop.jpg" alt="Inside a family-run general store in Rajasthan — wooden shelves of spices, grains and household goods in warm afternoon light." width="1600" height="1000" fetchpriority="high">
+        <figcaption>The shops we build for: a kirana store in Rajasthan. Every order on their store gets a live tracking page — no phone calls to ask “where is my order”.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -97,8 +91,9 @@
       </p>
 
       <div class="grid grid--3">
-        <article class="card reveal">
+        <article class="card card--lead reveal">
           <span class="num">01</span>
+          <span class="tag">Start here</span>
           <h3>Catalogue &amp; orders</h3>
           <p>Products, variants, stock and a single order list that always tells you what to do next.</p>
         </article>
@@ -161,7 +156,7 @@
 
   <!-- HANDOVER -->
   <section class="section section--paper2">
-    <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+    <div class="wrap split-2">
       <div>
         <p class="eyebrow">The handover rule</p>
         <p class="pull">
@@ -181,12 +176,12 @@
 
   <!-- CTA -->
   <section class="section">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap text-center">
       <h2 style="max-width:22ch;margin-inline:auto">Tell us about your shop. We will reply with a demo, not a sales pitch.</h2>
       <p class="lede" style="margin:22px auto 30px;max-width:52ch">
         The form takes about four minutes. Everything you type is saved as you go, so you can stop and come back.
       </p>
-      <div class="btn-row" style="justify-content:center">
+      <div class="btn-row btn-row--center">
         <a class="btn btn--terra" href="start.html">Start a project</a>
         <a class="btn btn--ghost" href="services.html#pricing">See what it costs</a>
       </div>
