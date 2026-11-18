@@ -15,7 +15,8 @@
         n.textContent = CFG.email;
         if (n.tagName === "A") n.href = "mailto:" + CFG.email;
       } else {
-        n.textContent = "contact pending";
+        /* Never render a "pending" placeholder in public: hide the element. */
+        n.style.display = "none";
         n.removeAttribute("href");
       }
     });
@@ -25,7 +26,8 @@
         n.textContent = CFG.phone;
         if (n.tagName === "A") n.href = "tel:" + CFG.phone.replace(/\s+/g, "");
       } else {
-        n.textContent = "phone pending";
+        /* Never render a "pending" placeholder in public: hide the element. */
+        n.style.display = "none";
         n.removeAttribute("href");
       }
     });
