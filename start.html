@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start a project — Shree Dev</title>
+<meta name="description" content="Tell us about your business in four minutes. Your answers are saved as you type, and we reply with a demo built for your category.">
+<meta name="theme-color" content="#fbf8f3">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Shree Dev, home">
+      <span class="mark" aria-hidden="true">SD</span>
+      <span class="brand-name">Shree Dev<small>Digital storefronts</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="services.html">What we build</a>
+      <a href="demos.html">Demos</a>
+      <a href="services.html#pricing">Pricing</a>
+      <a href="legal.html">Terms</a>
+      <a class="btn btn--primary" href="start.html" aria-current="page">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-bottom:40px">
+    <div class="wrap" style="max-width:760px">
+      <p class="eyebrow">Start a project</p>
+      <h1 style="max-width:24ch">Tell us about your shop</h1>
+      <p class="lede">
+        Twelve required answers, about four minutes. Everything saves as you type, so you
+        can close this page and come back on your phone.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="padding-top:0">
+    <div class="wrap" style="max-width:760px">
+
+      <div id="dev-bar" class="devbar" hidden>
+        <strong>Development state:</strong> the form endpoint is not configured yet, so
+        submissions are saved on this device only and nothing is sent to a server.
+        Fill in <code>assets/config.js</code> before this page goes live.
+      </div>
+
+      <div id="draft-restored" class="form-status" role="status" aria-live="polite"></div>
+
+      <form id="intake-form" class="form-shell" novalidate>
+
+        <fieldset class="fieldset">
+          <legend>The business</legend>
+
+          <div class="field" data-field="business_name">
+            <label for="business_name">Business or shop name <span aria-hidden="true">*</span></label>
+            <input type="text" id="business_name" name="business_name" autocomplete="organization" required>
+            <span class="err" role="alert"></span>
+          </div>
+
+          <div class="row-2">
+            <div class="field" data-field="category">
+              <label for="category">Closest category <span aria-hidden="true">*</span></label>
+              <select id="category" name="category" required>
+                <option value="">Choose one…</option>
+                <option value="retail">Retail / kirana / general store</option>
+                <option value="apparel">Apparel &amp; footwear</option>
+                <option value="food">Restaurant / cafe / cloud kitchen</option>
+                <option value="bakery">Bakery &amp; sweets</option>
+                <option value="craft">Handicraft / decor</option>
+                <option value="furniture">Furniture &amp; home</option>
+                <option value="electronics">Electronics &amp; mobiles</option>
+                <option value="services">Service business</option>
+                <option value="other">Something else</option>
+              </select>
+              <span class="err" role="alert"></span>
+            </div>
+
+            <div class="field" data-field="locality">
+              <label for="locality">Area or locality</label>
+              <input type="text" id="locality" name="locality" autocomplete="address-level3" placeholder="e.g. Vaishali Nagar">
+              <span class="hint">Helps us set delivery rules later.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>How to reach you</legend>
+
+          <div class="field" data-field="owner_name">
+            <label for="owner_name">Your name</label>
+            <input type="text" id="owner_name" name="owner_name" autocomplete="name">
+          </div>
+
+          <div class="row-2">
+            <div class="field" data-field="phone">
+              <label for="phone">Phone or WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+              <span class="err" role="alert"></span>
+            </div>
+
+            <div class="field" data-field="email">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="err" role="alert"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>How you sell today</legend>
+
+          <div class="field" data-field="sales_channel">
+            <label for="sales_channel">Right now, orders come through…</label>
+            <select id="sales_channel" name="sales_channel">
+              <option value="walkin">Walk-in customers only</option>
+              <option value="whatsapp">WhatsApp or phone orders</option>
+              <option value="social">Instagram / Facebook DMs</option>
+              <option value="marketplace">Amazon, Flipkart or similar</option>
+              <option value="website">An existing website</option>
+              <option value="mixed">A mix of these</option>
+            </select>
+          </div>
+
+          <div class="field" data-field="volume">
+            <label for="volume">Roughly how many orders a day?</label>
+            <select id="volume" name="volume">
+              <option value="0-5">0–5</option>
+              <option value="6-20">6–20</option>
+              <option value="21-50">21–50</option>
+              <option value="50+">More than 50</option>
+              <option value="unknown">Not sure yet</option>
+            </select>
+            <span class="hint">An honest guess is fine — it only decides whether courier automation is worth it.</span>
+          </div>
+
+          <div class="field">
+            <label for="website">Existing website or Instagram (if any)</label>
+            <input type="url" id="website" name="website" placeholder="https://…" inputmode="url">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>What you want it to do</legend>
+          <p class="hint" style="margin:-4px 0 14px">Tick everything that matters. Unticked items are simply left out of the quote.</p>
+
+          <label class="check"><input type="checkbox" name="needs" value="catalogue"> Show my products with prices</label>
+          <label class="check"><input type="checkbox" name="needs" value="orders"> Take orders online and manage them in one place</label>
+          <label class="check"><input type="checkbox" name="needs" value="payments"> Accept online payment</label>
+          <label class="check"><input type="checkbox" name="needs" value="shipping"> Ship outside my city, with tracking</label>
+          <label class="check"><input type="checkbox" name="needs" value="invoices"> Generate GST-ready invoices</label>
+          <label class="check"><input type="checkbox" name="needs" value="local"> Local same-day delivery slots</label>
+          <label class="check"><input type="checkbox" name="needs" value="enquiry"> Enquiry-first, no fixed price (high-value items)</label>
+        </fieldset>
+
+        <div class="field" data-field="notes">
+          <label for="notes">Anything else we should know</label>
+          <textarea id="notes" name="notes" placeholder="Seasonal rush, fragile items, multiple outlets, a specific look you like…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="check" style="margin-bottom:0">
+            <input type="checkbox" name="consent" required>
+            <span>I agree that Shree Dev may contact me about this request by phone, WhatsApp or
+            email. I can ask to be removed at any time. See the <a href="legal.html#privacy">privacy note</a>.</span>
+          </label>
+        </div>
+
+        <button class="btn btn--terra" type="submit" style="width:100%;justify-content:center">Send my request</button>
+
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+
+        <p style="margin:18px 0 0;font-size:.8rem;color:var(--ink-45)">
+          We reply within two working days. If we cannot build something useful for you,
+          we say so instead of quoting.
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:16px">
+          <span class="mark" aria-hidden="true">SD</span>
+          <span class="brand-name">Shree Dev<small>Digital storefronts</small></span>
+        </a>
+        <p style="font-size:.88rem;max-width:34ch">
+          Online stores for local businesses in <span data-site="city">Rajasthan</span>,
+          <span data-site="cityRegion">Rajasthan, India</span>.
+        </p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="services.html">What we build</a>
+        <a href="demos.html">Demos</a>
+        <a href="services.html#pricing">Pricing</a>
+        <a href="start.html">Start a project</a>
+      </div>
+      <div>
+        <h4>Legal &amp; contact</h4>
+        <a href="legal.html">Terms &amp; privacy</a>
+        <a href="legal.html#agreement">Agreement (draft)</a>
+        <a href="#" data-site="email">contact pending</a>
+        <a href="#" data-site="phone">phone pending</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>&copy; <span id="year">2026</span> Shree Dev. All prices in INR, GST extra where applicable.</p>
+      <p>Site built and owned by Shree Dev.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
