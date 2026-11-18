@@ -6,6 +6,29 @@
   var CFG = window.SHREEDEV || {};
   var DRAFT_KEY = "shreedev.intake.draft.v1";
 
+  /* ---------- 0. mobile nav ---------- */
+  function initNav() {
+    var btn = document.querySelector(".nav-toggle");
+    var nav = document.getElementById("main-nav");
+    if (!btn || !nav) return;
+    btn.addEventListener("click", function () {
+      var open = nav.classList.toggle("nav--open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        nav.classList.remove("nav--open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        nav.classList.remove("nav--open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
   /* ---------- 1. hydrate contact details ---------- */
   function hydrateContact() {
     var el;
@@ -155,8 +178,24 @@
       statusEl.textContent = msg;
     }
 
+    var LAST_KEY = "shreedev.intake.lastSent.v1";
+
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
+      /* Honeypot: the off-screen field is invisible to humans; bots fill it.
+         If filled, show the normal success message and send nothing. */
+      var hp = form.querySelector('[name="company_website"]');
+      if (hp && hp.value) {
+        showStatus("ok", "Received. We will reply within two working days with your demo link and next step.");
+        return;
+      }
+      /* Rate limit: one real submission per minute per device. */
+      var last = 0;
+      try { last = Number(localStorage.getItem(LAST_KEY) || 0); } catch (e) {}
+      if (Date.now() - last < 60000) {
+        showStatus("bad", "Please wait a minute before sending again.");
+        return;
+      }
       if (!validate()) {
         showStatus("bad", "Please fix the highlighted fields above.");
         var first = form.querySelector(".field.invalid input, .field.invalid select");
@@ -194,12 +233,13 @@
       }).then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
         try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+        try { localStorage.setItem(LAST_KEY, String(Date.now())); } catch (e) {}
         form.reset();
         showStatus("ok", "Received. We will reply within two working days with your demo link and next step.");
       }).catch(function (err) {
         showStatus("bad",
           "Could not send (" + err.message + "). Your answers are still saved on this device — " +
-          "please try again, or email us.");
+          "please try again, or email us" + (CFG.email ? " at " + CFG.email : "") + ".");
       }).then(function () {
         if (btn) { btn.disabled = false; btn.textContent = "Send my request"; }
       });
@@ -208,6 +248,7 @@
 
   /* ---------- boot ---------- */
   function boot() {
+    initNav();
     hydrateContact();
     initReveal();
     initForm();
