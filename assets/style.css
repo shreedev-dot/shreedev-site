@@ -98,14 +98,8 @@ p { margin: 0 0 1.1em; color: var(--ink-70); max-width: 62ch; }
 }
 .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
 .brand:hover { color: var(--ink); }
-.mark {
-  width: 34px; height: 34px; flex: 0 0 34px;
-  display: grid; place-items: center;
-  border: 1px solid var(--brass);
-  background: var(--ink); color: var(--brass);
-  font: 600 13px/1 var(--serif); letter-spacing: .04em;
-  border-radius: 2px;
-}
+.brand-mark { height: 44px; width: auto; display: block; }
+.footer-logo { width: 132px; height: auto; display: block; }
 .brand-name { font: 600 1.06rem/1.2 var(--serif); letter-spacing: .01em; }
 .brand-name small {
   display: block; font: 400 .62rem/1.4 var(--sans);
