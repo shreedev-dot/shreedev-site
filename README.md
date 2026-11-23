@@ -21,7 +21,7 @@ agency-site/
 
 | Key | Meaning | Current |
 |---|---|---|
-| `email` | public contact email | **empty** |
+| `email` | public contact email | **shreedev.jaipur@yahoo.com** |
 | `phone` | public phone (display only) | **empty** |
 | `whatsapp` | digits only | **empty** |
 | `formEndpoint` | where intake posts | **empty** |
